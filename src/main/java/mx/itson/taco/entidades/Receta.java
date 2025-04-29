@@ -17,6 +17,10 @@ import mx.itson.taco.enums.TipoReceta;
  */
 public class Receta {
 
+    public static Receta deserializarobjeto(String contenido) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     /**
      * @return the nombre
      */
@@ -62,14 +66,14 @@ public class Receta {
     /**
      * @return the ingredientes
      */
-    public List<ingrediente> getIngredientes() {
+    public List<Ingrediente> getIngredientes() {
         return ingredientes;
     }
 
     /**
      * @param ingredientes the ingredientes to set
      */
-    public void setIngredientes(List<ingrediente> ingredientes) {
+    public void setIngredientes(List<Ingrediente> ingredientes) {
         this.ingredientes = ingredientes;
     }
 
@@ -90,7 +94,7 @@ public class Receta {
     private String nombre;
     private int porciones;
     private TipoReceta tipo;
-    private List<ingrediente> ingredientes;
+    private List<Ingrediente> ingredientes;
     private List<Procedimiento> procedimiento;
     
     public static List<Receta> deserializar(String json){
@@ -104,5 +108,16 @@ public class Receta {
         }
         return recetas;
     }
+    public static Receta deserializarObjeto(String json){
     
+    Receta r = new Receta();
+    try{
+        Gson gson = new Gson();
+        r = gson.fromJson(json, Receta.class);
+  }catch (Exception ex){
+            System.err.print("Error el deserealizar");
+        }
+        return r ;
+    
+}
 }
