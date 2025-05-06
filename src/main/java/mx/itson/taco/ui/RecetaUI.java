@@ -11,7 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import mx.itson.taco.entidades.Ingrediente;
+import mx.itson.taco.entidades.Ingredientes;
 import mx.itson.taco.entidades.Receta;
 
 /**
@@ -139,7 +139,7 @@ FileDialog fileDialog = new FileDialog(this, "Seleccionar Archivo", FileDialog.L
                         
                         DefaultTableModel modelo = (DefaultTableModel) tblingredientes.getModel();
                         modelo.setRowCount(0);
-                        for(Ingrediente i : r.getIngredientes()){
+                        for(Ingredientes i : r.getIngredientes ()){
                             modelo.addRow(new Object [] {
                                 
                            i.getCantidad(),

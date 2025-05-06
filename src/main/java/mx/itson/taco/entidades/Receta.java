@@ -66,14 +66,14 @@ public class Receta {
     /**
      * @return the ingredientes
      */
-    public List<Ingrediente> getIngredientes() {
+    public List<Ingredientes> getIngredientes() {
         return ingredientes;
     }
 
     /**
      * @param ingredientes the ingredientes to set
      */
-    public void setIngredientes(List<Ingrediente> ingredientes) {
+    public void setIngredientes(List<Ingredientes> ingredientes) {
         this.ingredientes = ingredientes;
     }
 
@@ -94,7 +94,7 @@ public class Receta {
     private String nombre;
     private int porciones;
     private TipoReceta tipo;
-    private List<Ingrediente> ingredientes;
+    private List<Ingredientes> ingredientes;
     private List<Procedimiento> procedimiento;
     
     public static List<Receta> deserializar(String json){
